@@ -1,5 +1,9 @@
 # Gitlab version checker
 
+[![Docker Pulls](https://img.shields.io/docker/pulls/cschlosser/gitlab-version-check.svg)](https://hub.docker.com/r/cschlosser/gitlab-version-check/)
+[![Docker Build](https://img.shields.io/docker/build/cschlosser/gitlab-version-check.svg)](https://hub.docker.com/r/cschlosser/gitlab-version-check/)
+[![Docker Layers](https://images.microbadger.com/badges/image/cschlosser/gitlab-version-check.svg)](https://hub.docker.com/r/cschlosser/gitlab-version-check/)
+
 ## How to run
 
 ```bash
