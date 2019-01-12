@@ -16,7 +16,7 @@ Accept-Language: en-us
 Accept-Encoding: br, gzip, deflate
 Connection: keep-alive" https://version.gitlab.com/check.svg?gitlab_info=$ENCODED)
 
-echo $VERSION | grep -q "up-to-date1"
+echo $VERSION | grep -q "up-to-date"
 
 if [[ $? == 0 ]]; then
   echo "Up to date"
