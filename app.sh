@@ -8,12 +8,12 @@ fi
 
 ENCODED=$(echo '{"version":'$GITLAB'}' | base64 -i -)
 
-VERSION=$(curl -s -H "Accept: image/png,image/svg+xml,image/*;q=0.8,video/*;q=0.8,*/*;q=0.5
+VERSION=$(curl -s -H "Accept: image/svg+xml;q=0.8,*/*;q=0.5
 Referer: $GITLAB_URL
 DNT: 1
 Host: version.gitlab.com
 Accept-Language: en-us
-Accept-Encoding: br, gzip, deflate
+Accept-Encoding: deflate
 Connection: keep-alive" https://version.gitlab.com/check.svg?gitlab_info=$ENCODED)
 
 echo $VERSION | grep -q "up-to-date"
