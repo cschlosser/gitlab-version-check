@@ -8,7 +8,7 @@ fi
 
 ENCODED=$(echo '{"version":'$GITLAB'}' | base64 -i -)
 
-VERSION=$(curl -s -H "Accept: image/svg+xml;q=0.8,*/*;q=0.5
+VERSION=$(curl --http1.1 -s -H "Accept: image/svg+xml;q=0.8,*/*;q=0.5
 Referer: $GITLAB_URL
 DNT: 1
 Host: version.gitlab.com
