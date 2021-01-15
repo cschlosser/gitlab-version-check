@@ -16,13 +16,15 @@ Accept-Language: en-us
 Accept-Encoding: deflate
 Connection: keep-alive" https://version.gitlab.com/check.svg?gitlab_info=$ENCODED)
 
+text=$(sed -rn 's#(.*|\s*)<text .*>(.*)</text>(.*)#\2#p' <<< "${VERSION}")
+
 echo $VERSION | grep -q "up-to-date"
 
 if [[ $? == 0 ]]; then
   echo "Up to date"
 else
   echo "Sending update mail"
-  echo "An update is Available for your Gitlab Instance at $GITLAB_URL." | \
+  echo "An update is Available for your Gitlab Instance at $GITLAB_URL: ${text}" | \
              s-nail -s "Gitlab $GITLAB is out of date" \
                                -S smtp="$SMTP_SERVER" \
                                -S smtp-auth=login \
