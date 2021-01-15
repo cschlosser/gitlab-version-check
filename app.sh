@@ -24,8 +24,8 @@ if [[ $? == 0 ]]; then
   echo "Up to date"
 else
   echo "Sending update mail"
-  echo "An update is Available for your Gitlab Instance at $GITLAB_URL: ${text}" | \
-             s-nail -s "Gitlab $GITLAB is out of date" \
+  echo "An update is Available for your Gitlab Instance at $GITLAB_URL." | \
+             s-nail -s "Gitlab $GITLAB is out of date: ${text}" \
                                -S smtp="$SMTP_SERVER" \
                                -S smtp-auth=login \
                                -S smtp-auth-user="$SMTP_USER" \
